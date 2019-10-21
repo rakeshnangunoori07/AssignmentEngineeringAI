@@ -14,6 +14,7 @@ class PostsDisplayDataTableView: UITableView,UITableViewDelegate,UITableViewData
     var presentController:ViewController!
     var notFoundMessagingString:String!
     var count = 1
+    
     func reloadTableViewData(dataDictionary:NSMutableArray,presentViewController: ViewController,witNotFoundMessage:String) {
         notFoundMessagingString = witNotFoundMessage
         numberOfRowsInTableView = dataDictionary

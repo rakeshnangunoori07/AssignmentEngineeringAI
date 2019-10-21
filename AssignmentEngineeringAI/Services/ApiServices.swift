@@ -2,7 +2,7 @@
 //  ApiServices.swift
 //  AssignmentEngineeringAI
 //
-//  Created by Swaminath-Ojas on 21/10/19.
+//  Created by Rakesh-Ojas on 21/10/19.
 //  Copyright © 2019 Rakesh-Ojas. All rights reserved.
 //
 
@@ -14,8 +14,6 @@ class ApiServices: SessionManager {
     var interNetRechability = Reachability()
     var actIndicator = UIActivityIndicatorView()
     var activityBGV = UIView()
-    //var noNetAlert = UIAlertView()
-    //var netConnectedAlert = UIAlertView()
     var imageview = UIImageView()
     var noNetAlert = UIAlertController()
     var netConnectedAlert = UIAlertController()
@@ -51,36 +49,25 @@ class ApiServices: SessionManager {
         
     }
     
-   
     func isNetConnected() -> Bool {
-        
         if !Reachability.isConnectedToNetwork() {
             return false
-            
         }
-        
         return true
     }
     
     func netDisConnected() {
         self.stopActivityIndicator()
-        
-        //   ShowCustomAlert.sharedInstaic.showErrorAlrrt(messge: "You are not connected to the Internet.")
     }
-    
     func startActivityIndictor() {
         activityBGV.isHidden = false
-        // activityBGV.backgroundColor =  UIColor.blue;
-        
         UIApplication.shared.delegate?.window??.bringSubviewToFront(activityBGV)
         actIndicator.startAnimating()
-        
     }
     func stopActivityIndicator() {
         actIndicator.stopAnimating()
         activityBGV.isHidden = true
     }
-    
     
 }
 

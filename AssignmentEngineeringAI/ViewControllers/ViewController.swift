@@ -27,14 +27,16 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.getServicePostData(count:1)
     }
+    
+    //Call Get API Service......
 
     func getServicePostData(count:Int){
         let service =  ApiServices.init()
         service.startActivityIndictor()
         
         let url =  "https://hn.algolia.com/api/v1/search_by_date?tags=story&page="
-        let finalString = url + String(count)
-        Alamofire.request(finalString, method: .get, parameters: ["": ""], encoding: URLEncoding.default, headers: nil).responseJSON { (response: DataResponse<Any>) in
+        let urlRequest = url + String(count)
+        Alamofire.request(urlRequest, method: .get, parameters: ["": ""], encoding: URLEncoding.default, headers: nil).responseJSON { (response: DataResponse<Any>) in
             switch response.result {
             case .success:
                 service.stopActivityIndicator()

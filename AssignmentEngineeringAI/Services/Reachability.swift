@@ -2,7 +2,7 @@
 //  Reachability.swift
 //  AssignmentEngineeringAI
 //
-//  Created by Swaminath-Ojas on 21/10/19.
+//  Created by Rakesh-Ojas on 21/10/19.
 //  Copyright © 2019 Rakesh-Ojas. All rights reserved.
 //
 
